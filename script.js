@@ -13,7 +13,7 @@ var count = 0
  * @return none
  */
 /* Main */
-function main(){
+function main();
 let again = true;
 trainer = confirm("Do you want to play trainer?");
 playNim(){
@@ -42,7 +42,12 @@ if (count > 21) alert("you win!")
  * @return none
  */
 function userTurn(){
-turn = prompt("do you want to go 1,2, or 3 turn")
+turn = prompt("do you want to go 1,2, or 3 turns?");
+if (turn == 1) count ++;
+else if (turn == 2) count +=2;
+else if (turn == 3) count +=3;
+else alert("Your input is invalid");
+alert("the count is now"+count);
 }
 
 /** 
@@ -52,5 +57,8 @@ turn = prompt("do you want to go 1,2, or 3 turn")
  * @return none
  */
 function cpuTurn(){
-
+if (count == 17) turn = 3;
+else if (count == 18) turn = 2;
+else if (count == 19||20) turn = 1;
+else alert("Your input is invalid");
 }
