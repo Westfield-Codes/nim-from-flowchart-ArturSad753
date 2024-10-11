@@ -42,7 +42,7 @@ if (count > 21) alert("you win!")
  * @return none
  */
 function userTurn(){
-turn = prompt
+turn = prompt("do you want to go 1,2, or 3 turn")
 }
 
 /** 
