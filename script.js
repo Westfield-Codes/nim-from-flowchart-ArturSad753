@@ -1,11 +1,11 @@
-/* Nim Trainer by [your name]
+/* Nim Trainer by [Artur Sad]
  * based on this flowchart:
  * https://lucid.app/lucidchart/2018baaf-4c26-4a76-a0d5-93c97f444425/view
  */
 
 /* Global Variables */
-
-
+var trainer = false
+var count = 0
 /** 
  * main  
  * Handles new Nim games with gametype choice simple or trainer and a play again option. 
@@ -14,7 +14,11 @@
  */
 /* Main */
 function main(){
-
+let again = true;
+trainer = confirm("Do you want to play trainer?");
+playNim(){
+    if (again == true) main();
+else alert("Thank you for playing!")
 }
 
 /** 
@@ -24,7 +28,11 @@ function main(){
  * @return none
  */
 function playNim(){
-
+alert("Nim game played");
+playerTurn();
+if (count < 21) alert("You lose!");
+else cpuTurn();
+if (count > 21) alert("you win!")
 }
 
 /** 
@@ -34,7 +42,7 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-
+turn = prompt
 }
 
 /** 
