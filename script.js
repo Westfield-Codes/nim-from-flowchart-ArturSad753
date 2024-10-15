@@ -13,14 +13,13 @@ var count = 0
  * @return none
  */
 /* Main */
-function main();
-let again = true;
-trainer = confirm("Do you want to play trainer?");
-playNim(){
-    if (again == true) main();
-else alert("Thank you for playing!")
+function main(){
+again = false;
+trainer = confirm("do you want to play trainer mode?");
+playNim();
+if (again == true) main();
+else alert("End of the game, thank you for playing");
 }
-
 /** 
  * playNim 
  * plays a game with user first and computer second. Winner declared in an alert box. 
@@ -28,11 +27,8 @@ else alert("Thank you for playing!")
  * @return none
  */
 function playNim(){
-alert("Nim game played");
-playerTurn();
-if (count < 21) alert("You lose!");
-else cpuTurn();
-if (count > 21) alert("you win!")
+  var count = 0
+  
 }
 
 /** 
@@ -42,12 +38,7 @@ if (count > 21) alert("you win!")
  * @return none
  */
 function userTurn(){
-turn = prompt("do you want to go 1,2, or 3 turns?");
-if (turn == 1) count ++;
-else if (turn == 2) count +=2;
-else if (turn == 3) count +=3;
-else alert("Your input is invalid");
-alert("the count is now"+count);
+   
 }
 
 /** 
@@ -57,8 +48,4 @@ alert("the count is now"+count);
  * @return none
  */
 function cpuTurn(){
-if (count == 17) turn = 3;
-else if (count == 18) turn = 2;
-else if (count == 19||20) turn = 1;
-else alert("Your input is invalid");
-}
+
