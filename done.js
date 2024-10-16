@@ -29,7 +29,7 @@ function main(){
  */
 function playNim(){
     alert("Nim game played");
-    playerTurn();
+    userTurn();
     if (count < 21) alert("You lose!");
     else cpuTurn();
     if (count > 21) alert("you win!")

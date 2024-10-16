@@ -17,6 +17,7 @@ function main(){
 again = false;
 trainer = confirm("do you want to play trainer mode?");
 playNim();
+again = confirm("Do you want to play again?")
 if (again == true) main();
 else alert("End of the game, thank you for playing");
 }
@@ -27,7 +28,15 @@ else alert("End of the game, thank you for playing");
  * @return none
  */
 function playNim(){
-  var count = 0
+ count = 0;
+ while (count < 21) {
+ userTurn();
+  if (count > 20) alert("You lose!");
+  else {
+    cpuTurn();
+    if (count > 20) alert("You win!");  
+  }
+ }
   
 }
 
@@ -38,7 +47,9 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-   
+   count+=3;
+   alert("user counts 3, count is now"+ count)
+  
 }
 
 /** 
@@ -48,4 +59,6 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-
+  count+=3;
+  alert("computer counts 3, count is now"+ count)
+}
