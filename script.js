@@ -4,8 +4,8 @@
  */
 
 /* Global Variables */
-var trainer = false
-var count = 0
+var trainer = false;
+var count = 0;
 /** 
  * main  
  * Handles new Nim games with gametype choice simple or trainer and a play again option. 
@@ -14,12 +14,12 @@ var count = 0
  */
 /* Main */
 function main(){
-again = false;
-trainer = confirm("do you want to play trainer mode?");
-playNim();
-again = confirm("Do you want to play again?")
-if (again == true) main();
-else alert("End of the game, thank you for playing");
+ let again = false;
+  trainer = confirm("do you want to play trainer mode?");
+  playNim();
+  again = confirm("Do you want to play again?");
+  if (again == true) main();
+  else alert("End of the game, thank you for playing");
 }
 /** 
  * playNim 
@@ -28,16 +28,16 @@ else alert("End of the game, thank you for playing");
  * @return none
  */
 function playNim(){
- count = 0;
- while (count < 21) {
- userTurn();
-  if (count > 20) alert("You lose!");
-  else {
-    cpuTurn();
-    if (count > 20) alert("You win!");  
+  count = 0;
+  while (count < 21) {
+  userTurn();
+    if (count > 20) alert("You lose!");
+    else {
+      cpuTurn();
+      if (count > 20) alert("You win!");  
+    }
   }
- }
-  
+
 }
 
 /** 
@@ -47,9 +47,12 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-   count+=3;
-   alert("user counts 3, count is now"+ count)
-  
+  let turn = prompt("pick a number 1-3");
+  if (turn == "1") count++;
+   else if (turn == "2") count+=2;
+   else if (turn == "3") count+=3;
+   else alert("Your input is invalid!");
+   alert("The count is now "  +count);
 }
 
 /** 
@@ -59,6 +62,11 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-  count+=3;
-  alert("computer counts 3, count is now"+ count)
+  if (count == 17) turn = 3;
+  else if (count == 18) turn =2;
+  else if (count == 19 || count == 20) turn =1;
+  else if (trainer == true) turn = 4 - count%4;
+  else turn = Math.floor(Math.random()*3)+1;
+  count+= turn;
+  alert("I counted "+turn+" count is now " +count)
 }
